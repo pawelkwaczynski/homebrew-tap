@@ -10,29 +10,26 @@ class ThermalGuard < Formula
   depends_on xcode: :build
 
   def install
-    system "swiftc", "-O", "-o", "thermalstate", "thermalstate.swift"
-    system "swiftc", "-O", "-o", "heatbar-bin", "heatbar.swift"
-    bin.install "thermalstate"
-    bin.install "heatbar-bin" => "heatbar"
-    bin.install "guard.py" => "thermal-guard"
-    bin.install "safe-run", "heat", "fleet", "thermal-report"
-    pkgshare.install "install.sh", "uninstall.sh", "guard.py", "safe-run", "heat", "fleet",
-                     "thermal-report", "thermalstate.swift", "heatbar.swift",
-                     "pl.pawel.thermal-guard.plist", "pl.pawel.heatbar.plist", "branding",
-                     "tests", "README.md"
+    # walidacja builda przy instalacji (natychmiastowy blad, gdy brak narzedzi Xcode);
+    # artefakty odrzucamy - install.sh kompiluje per-uzytkownik i stawia LaunchAgents
+    system "swiftc", "-O", "-o", "buildcheck_ts", "thermalstate.swift"
+    system "swiftc", "-O", "-o", "buildcheck_hb", "heatbar.swift"
+    rm "buildcheck_ts"
+    rm "buildcheck_hb"
+    pkgshare.install Dir["*"]
   end
 
   def caveats
     <<~EOS
-      To start the daemon and the menu bar (LaunchAgents, config, logos), run:
+      Finish the setup (daemon + menu bar LaunchAgents, config, logos):
         bash #{pkgshare}/install.sh
-      A fresh install starts in WATCH-ONLY mode - enable protection with one click
-      in the menu bar. Uninstall everything with:
-        bash #{pkgshare}/uninstall.sh
+      A fresh install starts in WATCH-ONLY mode - enable protection with one
+      click in the menu bar (the eye icon reminds you which mode you are in).
+      Uninstall everything:  bash #{pkgshare}/uninstall.sh
     EOS
   end
 
   test do
-    assert_match "safe-run", shell_output("#{bin}/safe-run --help")
+    assert_match "safe-run", shell_output("python3 #{pkgshare}/safe-run --help")
   end
 end
