@@ -1,7 +1,7 @@
 # Author: Pawel Kwaczynski (FOCUS FRAME) <kwaczynski.pawel@gmail.com>
 # Project of the AIrON student research club (Computer Science, AHE Lodz).
 class ThermalGuard < Formula
-  desc "Thermal safety net for Apple Silicon by Pawel Kwaczynski: freezes heavy jobs before the Mac cooks itself"
+  desc "Stops Mac overheating: pauses hot processes, keep-awake with thermal fuse"
   homepage "https://github.com/pawelkwaczynski/coffee-paladin"
   url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "ef9e55720ed492f2a4b47128a32b55ff04107c195e9d73bce559ad2b28612963"
