@@ -3,8 +3,8 @@
 class ThermalGuard < Formula
   desc "Stops Mac overheating: pauses hot processes, keep-awake with thermal fuse"
   homepage "https://github.com/pawelkwaczynski/coffee-paladin"
-  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "ef9e55720ed492f2a4b47128a32b55ff04107c195e9d73bce559ad2b28612963"
+  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "e7f200724a310b1b994184ae0010809bffcd7fd5f5dcc1035f481e799541b115"
   license "MIT"
 
   depends_on :macos
