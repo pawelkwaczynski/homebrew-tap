@@ -3,8 +3,8 @@
 class ThermalGuard < Formula
   desc "Thermal safety net for Apple Silicon by Pawel Kwaczynski: freezes heavy jobs before the Mac cooks itself"
   homepage "https://github.com/pawelkwaczynski/coffee-paladin"
-  url "https://github.com/pawelkwaczynski/thermal-guard/archive/refs/tags/v1.7.5.tar.gz"
-  sha256 "37679dd2f0d25b5b0c2b17873409503eee9f90f685d1fc2c545cb521fac14d95"
+  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "2f0a43d43b03b06abdb536c55a61f285e9b30f6a7199c9d699e4e4a450f81046"
   license "MIT"
 
   depends_on :macos
