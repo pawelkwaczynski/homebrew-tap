@@ -8,8 +8,8 @@ class ThermalGuard < Formula
   license "MIT"
 
   depends_on "macmon"
-  depends_on :macos
   depends_on xcode: :build
+  depends_on :macos
 
   def install
     # walidacja builda przy instalacji (natychmiastowy blad, gdy brak narzedzi Xcode);
