@@ -7,8 +7,8 @@ class ThermalGuard < Formula
   sha256 "e7f200724a310b1b994184ae0010809bffcd7fd5f5dcc1035f481e799541b115"
   license "MIT"
 
-  depends_on "macmon"
   depends_on xcode: :build
+  depends_on "macmon"
   depends_on :macos
 
   def install
