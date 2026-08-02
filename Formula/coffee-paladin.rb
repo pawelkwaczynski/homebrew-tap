@@ -1,4 +1,4 @@
-# Author: Pawel Kwaczynski (FOCUS FRAME) <79720224+pawelkwaczynski@users.noreply.github.com>
+# Author: Pawel Kwaczynski (FOCUS FRAME) <kwaczynski.pawel@gmail.com>
 # Project of the AIrON student research club (Computer Science, AHE Lodz).
 class CoffeePaladin < Formula
   desc "Stops Mac overheating: pauses hot processes, keep-awake with thermal fuse"
