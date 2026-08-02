@@ -23,6 +23,10 @@ class CoffeePaladin < Formula
 
   def caveats
     <<~EOS
+      Needs Xcode command line tools for `swiftc` - WITHOUT THEM there is no menu
+      bar app and no chip sensor, only the battery fuse:
+        xcode-select --install
+
       Finish the setup (daemon + menu bar LaunchAgents, config, logos):
         bash #{pkgshare}/install.sh
       A fresh install starts in WATCH-ONLY mode - enable protection with one
