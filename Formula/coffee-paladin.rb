@@ -1,6 +1,6 @@
 # Author: Pawel Kwaczynski (FOCUS FRAME) <kwaczynski.pawel@gmail.com>
 # Project of the AIrON student research club (Computer Science, AHE Lodz).
-class ThermalGuard < Formula
+class CoffeePaladin < Formula
   desc "Stops Mac overheating: pauses hot processes, keep-awake with thermal fuse"
   homepage "https://github.com/pawelkwaczynski/coffee-paladin"
   url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v2.1.0.tar.gz"
