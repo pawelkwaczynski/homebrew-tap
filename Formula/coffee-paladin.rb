@@ -3,19 +3,18 @@
 class CoffeePaladin < Formula
   desc "Stops Mac overheating: pauses hot processes, keep-awake with thermal fuse"
   homepage "https://github.com/pawelkwaczynski/coffee-paladin"
-  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "a66b36e5454116bdd8bf96d02adf64bb76b589c1e8c2e97e7e9af0978a1f0569"
+  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "049b0b5b1a91345ad760e7d5d77cec696d7b929b77914332dcb02d956174ab31"
   license "MIT"
 
-  depends_on xcode: :build
   depends_on "macmon"
-  depends_on :macos
+  depends_on macos: :sonoma
 
   def install
     # walidacja builda przy instalacji (natychmiastowy blad, gdy brak narzedzi Xcode);
     # artefakty odrzucamy - install.sh kompiluje per-uzytkownik i stawia LaunchAgents
-    system "swiftc", "-O", "-o", "buildcheck_ts", "thermalstate.swift"
-    system "swiftc", "-O", "-o", "buildcheck_hb", "heatbar.swift"
+    system "swiftc", "-O", "-target", "arm64-apple-macosx14.0", "-o", "buildcheck_ts", "thermalstate.swift"
+    system "swiftc", "-O", "-target", "arm64-apple-macosx14.0", "-o", "buildcheck_hb", "heatbar.swift"
     rm "buildcheck_ts"
     rm "buildcheck_hb"
     pkgshare.install Dir["*"]
