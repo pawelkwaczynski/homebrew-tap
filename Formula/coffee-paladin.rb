@@ -3,8 +3,8 @@
 class CoffeePaladin < Formula
   desc "Stops Mac overheating: pauses hot processes, keep-awake with thermal fuse"
   homepage "https://github.com/pawelkwaczynski/coffee-paladin"
-  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v3.2.1.tar.gz"
-  sha256 "0c03ea9b13313a9262cdc9b810bf07460f99bc5a97f16bca21451372e6334a29"
+  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v3.2.2.tar.gz"
+  sha256 "1f9cd8114b267ba971dcb485f06b6f7df1454533eb4c2d89a380ae7663d65625"
   license "MIT"
 
   depends_on "macmon"
