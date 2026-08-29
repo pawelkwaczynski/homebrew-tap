@@ -3,8 +3,8 @@
 class CoffeePaladin < Formula
   desc "Stops Mac overheating: pauses hot processes, keep-awake with thermal fuse"
   homepage "https://github.com/pawelkwaczynski/coffee-paladin"
-  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v3.3.3.tar.gz"
-  sha256 "0a3148e842e24ba616054baf4d7205ae3f438b6e41db3a9786e9cecaeb320421"
+  url "https://github.com/pawelkwaczynski/coffee-paladin/archive/refs/tags/v3.3.4.tar.gz"
+  sha256 "1085e338e1e53f0c47c6c9e7d15f6c9c519426978be4807fb106ef25a6ed3b9f"
   license "MIT"
 
   depends_on "macmon"
@@ -36,5 +36,7 @@ class CoffeePaladin < Formula
 
   test do
     assert_match "safe-run", shell_output("python3 #{pkgshare}/safe-run --help")
+    # A tool that is missing from the tarball fails here rather than on a rack.
+    assert_match "Prometheus", shell_output("python3 #{pkgshare}/thermal-metrics --help")
   end
 end
